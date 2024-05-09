@@ -2,6 +2,7 @@
 
 
     <!-- carousel-->
+<<<<<<< HEAD
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             @php
@@ -16,31 +17,47 @@
                         ->get();
                 }
             @endphp
+=======
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @php
+            $currentLocale = App::getLocale();
+            $language = \App\Models\Language::where('code', $currentLocale)->first();
+            $carousels = null;
+            if ($language) {
+                $carousels = \App\Models\Carousel::where('language_id', $language->id)
+                    ->where('active', true)
+                    ->orderBy('created_at', 'desc')
+                    ->take(3)
+                    ->get();
+            }
+        @endphp
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
 
-            @if ($carousels)
-                @foreach ($carousels as $carousel)
-                    <div class="carousel-item active">
-                        <img src="{{ asset('storage/' . $carousel->photo) }}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ $carousel->title }}</h5>
-                            <p>{!! $carousel->body !!}</p>
-                        </div>
+        @if ($carousels)
+            @foreach ($carousels as $carousel)
+                <div class="carousel-item active">
+                    <img src="{{ asset('storage/' . $carousel->photo) }}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ $carousel->title }}</h5>
+                        <p>{!! $carousel->body !!}</p>
                     </div>
-                @endforeach
-            @endif
+                </div>
+            @endforeach
+        @endif
 
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
 
     <!-- Testimonial Shoaar section-->
@@ -88,11 +105,16 @@
                 <div class="col-lg-8 col-xl-6">
                     <div class="text-center">
                         <h2 class="fw-bolder">{{ __('homepage.Annoucements') }}</h2>
+<<<<<<< HEAD
                         <a style="text-decoration: none"  href="{{ route('annoucements.index') }}">View
                             All 
                             <i class="bi bi-arrow-right"></i>
                         </a>
                         {{-- <p >{{ __('homepage.More') }}</p> --}}
+=======
+                        <a  class="stretched-link text-decoration-none" href="{{ route('annoucements.index') }}">{{ __('homepage.View All ') }}
+                            <i class="bi bi-arrow-right"></i>
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                         </a>
                     </div>
                 </div>
@@ -137,12 +159,18 @@
         <div class="container px-5 my-5">
             <div class="text-center">
                 <h2 class="fw-bolder">{{ __('homepage.Articles') }}</h2>
+<<<<<<< HEAD
                 
                     <a style="text-decoration: none" href="{{ route('articles.index') }}">
                     {{ __('homepage.View All') }}
                     <i class="bi bi-arrow-right">
                     </i>
                     </a>
+=======
+                <a  class="stretched-link text-decoration-none text-center" href="{{ route('articles.index') }}">{{ __('homepage.View All ') }}
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
             </div>
             <div class="row">
                 @if ($articles)
@@ -161,17 +189,26 @@
         @else
             <h3 style="color:red; text-align:center">Sorry nothing found</h3>
             @endif
+            
         </div>
+       
     </div>
     <!-- Team members section-->
     <section class="py-5">
         <div class="container px-5 my-5">
             <div class="text-center">
                 <h2 class="fw-bolder">{{ __('homepage.Our team') }}</h2>
+<<<<<<< HEAD
                 <a style="text-decoration: none" href="{{ route('teamMembers.index') }}">{{ __('homepage.View All') }}
                     <i class="bi bi-arrow-right">
                     </i>
                 </a>
+=======
+                <a  class="stretched-link text-decoration-none" href="{{ route('teamMembers.index') }}">{{ __('homepage.View All ') }}
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
             <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
                 @if ($teamMembers)
                     @foreach ($teamMembers as $teamMember)
@@ -188,14 +225,16 @@
                 @else
                     <h3 style="color:red; text-align:center">Sorry nothing found</h3>
                 @endif
-
+                
             </div>
+         
         </div>
+        
     </section>
 
 
 
-    <!-- Get to know about us section one-->
+    <!-- Why Us Section-->
     <section class="py-5 bg-light" id="scroll-target">
         <div class="container px-5 my-5">
             <div class="row gx-5 align-items-center">
@@ -208,7 +247,12 @@
                             <h2 class="fw-bolder">{{ $why->title }}</h2>
 
                             <p class="lead fw-normal text-muted mb-0">{!! $why->shortBody() !!}</p>
+<<<<<<< HEAD
                             <a style="text-decoration: none" href="{{ route('whyus.index') }}">{{ __('homepage.Read More') }}
+=======
+                            <a class="text-decoration-none" href="{{ route('whyus.index',$why->id) }}">
+                                {{ __('homepage.Read More') }}
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                                 <i class="bi bi-arrow-right"></i>
                             </a>
 
@@ -221,7 +265,7 @@
             </div>
         </div>
     </section>
-    <!-- Get to know about us section two-->
+    <!-- Our Story-->
     <section class="py-5">
         <div class="container px-5 my-5">
             <div class="row gx-5 align-items-center">
@@ -232,7 +276,12 @@
                         <div class="col-lg-6">
                             <h2 class="fw-bolder">{{ $our->title }}</h2>
                             <p class="lead fw-normal text-muted mb-0">{!! $our->shortBody() !!}</p>
+<<<<<<< HEAD
                             <a style="text-decoration:none" href="{{ route('ourstory.index') }}">{{ __('homepage.Read More') }}
+=======
+                            <a class="text-decoration-none" href="{{ route('ourstory.index',$our->id) }}">
+                                {{ __('homepage.Read More') }}
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                                 <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -243,7 +292,7 @@
             </div>
         </div>
     </section>
-    <!-- Get to know about us section three-->
+    <!-- Vision Section-->
     <section class="py-5 bg-light" id="scroll-target">
         <div class="container px-5 my-5">
             <div class="row gx-5 align-items-center">
@@ -255,7 +304,12 @@
                         <div class="col-lg-6">
                             <h2 class="fw-bolder">Our Mission</h2>
                             <p class="lead fw-normal text-muted mb-0">{!! $v->shortbody() !!}</p>
+<<<<<<< HEAD
                             <a style="text-decoration:none" href="{{ route('ourvision.index') }}">{{ __('homepage.Read More') }}
+=======
+                            <a class="text-decoration-none" href="{{ route('ourvision.index',$v->id) }}">
+                                {{ __('homepage.Read More') }}
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                                 <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -291,6 +345,7 @@
                                         <div class="item mb-4">
                                             <div class="item">
                                                 <div class="card border-0 shadow">
+<<<<<<< HEAD
                                                   
                                                     {{-- <x-embed url="{{ $video->url }}" aspect-ratio="4:3"></x-embed> --}}
                                                     <a href="{{ asset('storage/' . $image) }}" data-lightbox="photos">
@@ -298,12 +353,22 @@
 
                                                     </a>
 
+=======
+                                                 
+                                                    <x-embed url="{{ $video->url }}" aspect-ratio="4:3"></x-embed>
+                                                    
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                                                 </div>
                                             </div>
 
                                         </div>
+<<<<<<< HEAD
                                         @endforeach
                                         @endif
+=======
+
+                                   
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                                     @endforeach
                                 @else
                                     <h1 style="color: red">Nothing to show</h1>
@@ -342,7 +407,11 @@
                     @endif
                     <div class="text-end mb-5 mb-xl-0">
                         <a class="text-decoration-none" href="{{ route('bookclub.index') }}">
+<<<<<<< HEAD
                             {{ __('homepage.View All') }}
+=======
+                            {{ __('homepage.View All ') }}
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -379,7 +448,7 @@
         </div>
     </section>
 
-    <!-- Social Media Feeds and Quick links -->
+    {{-- <!-- Social Media Feeds and Quick links -->
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -439,7 +508,7 @@
         </div>
         <br>
         <br>
-    </section>
+    </section> --}}
 
 
 

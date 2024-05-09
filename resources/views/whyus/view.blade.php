@@ -20,7 +20,11 @@
 
                             <!-- Post meta content-->
                             <div class="text-muted fst-italic mb-2">
+<<<<<<< HEAD
                                 
+=======
+                                {{ $whyus->published_at }}
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                             </div>
 
                             <!-- AddToAny BEGIN -->
@@ -32,18 +36,33 @@
                                 <a class="a2a_button_whatsapp"></a>
                             </div>
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                         </header>
                         <!-- Preview image figure-->
                         <figure class="mb-4"><img class="img-fluid rounded"
                                 src="{{ asset('storage/' . $whyus->thumbnail) }}" alt="..." /></figure>
                         <!-- Post content-->
+<<<<<<< HEAD
                         <section class="mb-5" style="text-align: justify">
+=======
+                        <section class="mb-5">
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                             <p class="fs-5 mb-4">{!! $whyus->body !!}</p>
 
                         </section>
                     </article>
 
+<<<<<<< HEAD
                   
+=======
+                   
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                 </div>
             </div>
         </div>

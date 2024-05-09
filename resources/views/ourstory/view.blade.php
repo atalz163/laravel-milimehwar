@@ -20,7 +20,11 @@
 
                             <!-- Post meta content-->
                             <div class="text-muted fst-italic mb-2">
+<<<<<<< HEAD
                          
+=======
+                                {{ $ourstory->published_at }}
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                             </div>
 
                             <!-- AddToAny BEGIN -->
@@ -47,7 +51,11 @@
                         </section>
                     </article>
 
+<<<<<<< HEAD
               
+=======
+                   
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                 </div>
             </div>
         </div>

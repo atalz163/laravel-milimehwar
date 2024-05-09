@@ -10,7 +10,11 @@
                 <div class="col-lg-9">
                     <!-- Post content-->
 
+<<<<<<< HEAD
                     <article>
+=======
+                    <teamMember>
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                         <!-- Post header-->
                         <header class="mb-4">
 
@@ -19,10 +23,14 @@
                             <h1 class="fw-bolder mb-1">{{ $teamMember->name }}</h1>
 
                             <!-- Post meta content-->
+<<<<<<< HEAD
                             <div class="text-muted fst-italic mb-2">
                                 {{-- {{ $teamMember->getFormattedDate() }} --}}
                             </div>
 
+=======
+                           
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                             <!-- AddToAny BEGIN -->
                             <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
                                 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
@@ -45,9 +53,15 @@
                             <p class="fs-5 mb-4">{!! $teamMember->biography !!}</p>
 
                         </section>
+<<<<<<< HEAD
                     </article>
 
                  
+=======
+                    </teamMember>
+
+                   
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                 </div>
             </div>
         </div>

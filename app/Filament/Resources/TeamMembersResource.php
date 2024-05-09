@@ -72,10 +72,8 @@ class TeamMembersResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\ImageColumn::make('photo')
-                    ->searchable(['title', 'body'])
-                    ->sortable(),
-
+                Tables\Columns\ImageColumn::make('photo'),
+                    
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('language.name')

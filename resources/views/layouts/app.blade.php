@@ -23,15 +23,20 @@
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
 
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldkr68pAAAAACis86t4qrYe1S48Ur0nYFrOHcyh"></script>
+          
+
+        <div id="fb-root">
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"
+                nonce="fiCpGxQP"></script>
+                </div>
     <x-embed-styles />
     <!-- Stylesheet for Gallery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 
 </head>
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"
-    nonce="fiCpGxQP"></script>
+
 <main class="flex-shrink-0">
     <!-- Navigation-->
     <div class="top-icons">
@@ -83,6 +88,7 @@
             </div>
         </div>
     </div>
+    
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-info">
 
@@ -103,7 +109,11 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">{{ __('homepage.Gallery') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+<<<<<<< HEAD
                             <li><a class="dropdown-item" href="{{ route('photos.index') }}">{{ __('homepage.Photos') }}</a></li>
+=======
+                            <li><a class="dropdown-item" href="blog-home.html">{{ __('homepage.Photos') }}</a></li>
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                             <li><a class="dropdown-item" href="{{ route('videos.index') }}">{{ __('homepage.Videos') }}</a></li>
                         </ul>
                     </li>
@@ -115,14 +125,20 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
                             <li><a class="dropdown-item" href="{{ route('ourstory.index') }}">{{ __('homepage.Our Bio') }}</a></li>
                             <li><a class="dropdown-item" href="{{ route('ourvision.index') }}">{{ __('homepage.Our Mission') }}</a>
+<<<<<<< HEAD
                                 <li><a class="dropdown-item" href="{{ route('whyus.index') }}">{{ __('homepage.Why Us') }}</a>
                             </li>
                             {{-- <li><a class="dropdown-item" href="{{ route('ourstory.index') }}">{{ __('homepage.Our Story') }}</a> --}}
+=======
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('ourstory.index') }}">{{ __('homepage.Our Story') }}</a>
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                             </li>
                            
                             </li>
                         </ul>
                     </li>
+<<<<<<< HEAD
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">{{ __('homepage.Contact') }}</a>
@@ -131,6 +147,10 @@
                             <li><a class="dropdown-item" href="{{ route('contact.create') }}">{{ __('homepage.Contact') }}</a>
                             <li><a class="dropdown-item" href="{{ route('contact.index') }}">{{ __('homepage.Feedbacks & Comments') }}</a>
                             <li><a class="dropdown-item" href="{{ route('onlineRegister.create') }}">{{ __('homepage.Online Registeration') }}</a>
+=======
+                    <li class="nav-item"><a class="nav-link" href="{{ route('contact.create') }}">{{ __('homepage.Contact') }}</a>
+                    </li>
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
 
 
                     </li>
@@ -177,7 +197,6 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/scripts.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 

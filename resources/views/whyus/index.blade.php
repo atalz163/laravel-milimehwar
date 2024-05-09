@@ -5,7 +5,11 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
                     <div class="text-center">
+<<<<<<< HEAD
                         <h2 class="fw-bolder">{{ __('homepage.Our Bio') }}</h2>
+=======
+                        <h2 class="fw-bolder">{{ __('homepage.Why Us') }}</h2>
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
 
                         </a>
                     </div>

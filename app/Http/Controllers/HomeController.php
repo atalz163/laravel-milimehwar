@@ -26,7 +26,10 @@ class HomeController extends Controller
 {
     public function openHomePage(Request $request)
     {
+<<<<<<< HEAD
    
+=======
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
     
         $currentLocale = App::getLocale();
         $language = Language::where('code', $currentLocale)->first();
@@ -68,6 +71,7 @@ class HomeController extends Controller
         }
 
         $videos = Video::orderBy('created_at', 'desc')->take(3)->get();
+<<<<<<< HEAD
         
 
         $perPage = 3; // Number of items per page
@@ -87,6 +91,8 @@ class HomeController extends Controller
 
 
 
+=======
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
         //dd($videos);
         if ($language) {
             $bookclubs = BookClubs::where('language_id', $language->id)
@@ -212,7 +218,11 @@ class HomeController extends Controller
             $showAll = TeamMembers::where('language_id', $language->id)
                 ->where('active', true)
                 ->orderBy('created_at', 'desc')
+<<<<<<< HEAD
                 ->paginate(9);
+=======
+                ->paginate(2);
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
         } else {
 
             $showAll = null;
@@ -228,7 +238,11 @@ class HomeController extends Controller
 
     }
 
+<<<<<<< HEAD
     public function bookclubs(Request $request)
+=======
+    public function allbookclubs(Request $request)
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
     {
         $currentLocale = App::getLocale();
         $language = Language::where('code', $currentLocale)->first();
@@ -328,6 +342,7 @@ class HomeController extends Controller
         return view('videos.index',compact('videos'));
     }
 
+<<<<<<< HEAD
     public function allphotos()
     {
         // $photos = Photos::orderBy('created_at', 'desc')->paginate(3);
@@ -351,4 +366,6 @@ class HomeController extends Controller
     }
 
 
+=======
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
 }

@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "anhskohbo/no-captcha": "^3.6",
         "bensampo/laravel-embed": "^2.4",
         "chinleung/laravel-multilingual-routes": "^4.1",
         "cohensive/oembed": "^0.17.0",

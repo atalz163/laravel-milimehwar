@@ -26,7 +26,11 @@ return
         'Online Form' => 'انلاین فارم',
         'Follow Us on our Social Media' => 'د ټولنیز رسنیو لړۍ',
         'Quick Links' => 'چټک لینکونه',
+<<<<<<< HEAD
         'View All' => "نور دلته",
         'Read More' => 'نور..'
 
+=======
+        'View All ' => 'ټول وګوری'
+>>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
     ];
