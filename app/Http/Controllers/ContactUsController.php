@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Session;
 
 class ContactUsController extends Controller
 {
-<<<<<<< HEAD
-
     public function index(){
         $contacts = ContactUs::orderBy('created_at','desc')
         ->where('approved',true)
@@ -18,8 +16,8 @@ class ContactUsController extends Controller
         
         return view('contact-us.index',compact('contacts'));
     }
-=======
->>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
+
+
     public function store(Request $request){
         $validatedData = $request->validate([
             'full_name' => 'required|string|max:255',
@@ -35,10 +33,10 @@ class ContactUsController extends Controller
     }
 
     public function create(){
-<<<<<<< HEAD
+
         return view('contact-us.contactus');
-=======
+
         return view('contactus');
->>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
+
     }
 }
