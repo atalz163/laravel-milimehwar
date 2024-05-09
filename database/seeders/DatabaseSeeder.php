@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(ItemTableSeeder::class);
         $this->call(LanguageTableSeeder::class);
+        $this->call(RolesAndPermissionsSeeder::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

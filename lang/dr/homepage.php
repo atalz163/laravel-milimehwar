@@ -13,6 +13,8 @@ return
         'Vision' => 'ویژن ما',
         'Documents' => 'اسناد',
         'Contact' => 'تماس با ما',
+        'Online Registeration' => 'فارم عضویت',
+        'Feedbacks & Comments' => 'نظریات و پیشنهادات شما',
         'Read More' => 'بیشتر بخوانید',
         'View details' => 'بیشتر بخوانید',
         'Our team' => 'تیم ما',
@@ -23,5 +25,7 @@ return
         'Want to join us?' => 'آیا میخواهید با ما همراه شوید؟',
         'Online Form' => 'آنلاین فارم',
         'Follow Us on our Social Media' => 'ارتباطات اجتماعی',
-        'Quick Links' => 'سایت های مرتبط'
+        'Quick Links' => 'سایت های مرتبط',
+        'View All' => 'مشاهده همه',
+        'Read More' => 'مشاهده..'
     ];

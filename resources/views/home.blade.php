@@ -12,7 +12,7 @@
                     $carousels = \App\Models\Carousel::where('language_id', $language->id)
                         ->where('active', true)
                         ->orderBy('created_at', 'desc')
-                        ->take(3)
+                        ->take(4)
                         ->get();
                 }
             @endphp
@@ -88,8 +88,10 @@
                 <div class="col-lg-8 col-xl-6">
                     <div class="text-center">
                         <h2 class="fw-bolder">{{ __('homepage.Annoucements') }}</h2>
-                        <a class="lead fw-normal text-muted mb-5" href="{{ route('annoucements.index') }}">View
-                            Announcements</a>
+                        <a style="text-decoration: none"  href="{{ route('annoucements.index') }}">View
+                            All 
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                         {{-- <p >{{ __('homepage.More') }}</p> --}}
                         </a>
                     </div>
@@ -114,7 +116,7 @@
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
-                                            <button class="btn btn-primary ">Read More</button>
+                                            <button class="btn btn-primary ">{{ __('homepage.Read More') }}</button>
 
                                         </div>
                                     </div>
@@ -135,8 +137,12 @@
         <div class="container px-5 my-5">
             <div class="text-center">
                 <h2 class="fw-bolder">{{ __('homepage.Articles') }}</h2>
-                <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                
+                    <a style="text-decoration: none" href="{{ route('articles.index') }}">
+                    {{ __('homepage.View All') }}
+                    <i class="bi bi-arrow-right">
+                    </i>
+                    </a>
             </div>
             <div class="row">
                 @if ($articles)
@@ -162,18 +168,21 @@
         <div class="container px-5 my-5">
             <div class="text-center">
                 <h2 class="fw-bolder">{{ __('homepage.Our team') }}</h2>
-                <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
-            </div>
+                <a style="text-decoration: none" href="{{ route('teamMembers.index') }}">{{ __('homepage.View All') }}
+                    <i class="bi bi-arrow-right">
+                    </i>
+                </a>
             <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
                 @if ($teamMembers)
                     @foreach ($teamMembers as $teamMember)
                         <div class="col mb-5 mb-5 mb-xl-0">
                             <div class="text-center">
+                                <a href="{{ route('teammember.show', $teamMember->id) }}" style="color:inherit;text-decoration:none">
                                 <img class="img-fluid  mb-4 px-4" src="{{ asset('storage/' . $teamMember->photo) }}"
                                     alt="..." id="teamphoto" />
                                 <h5 class="fw-bolder">{{ $teamMember->name }}</h5>
                             </div>
-
+                        </a>
                         </div>
                     @endforeach
                 @else
@@ -199,7 +208,9 @@
                             <h2 class="fw-bolder">{{ $why->title }}</h2>
 
                             <p class="lead fw-normal text-muted mb-0">{!! $why->shortBody() !!}</p>
-                            <a href="">Read more...</a>
+                            <a style="text-decoration: none" href="{{ route('whyus.index') }}">{{ __('homepage.Read More') }}
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
 
 
                         </div>
@@ -221,6 +232,9 @@
                         <div class="col-lg-6">
                             <h2 class="fw-bolder">{{ $our->title }}</h2>
                             <p class="lead fw-normal text-muted mb-0">{!! $our->shortBody() !!}</p>
+                            <a style="text-decoration:none" href="{{ route('ourstory.index') }}">{{ __('homepage.Read More') }}
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     @endforeach
                 @else
@@ -239,8 +253,11 @@
                                 src="{{ asset('storage/' . $v->thumbnail) }}" alt="..." />
                         </div>
                         <div class="col-lg-6">
-                            <h2 class="fw-bolder">{{ $v->title }}</h2>
+                            <h2 class="fw-bolder">Our Mission</h2>
                             <p class="lead fw-normal text-muted mb-0">{!! $v->shortbody() !!}</p>
+                            <a style="text-decoration:none" href="{{ route('ourvision.index') }}">{{ __('homepage.Read More') }}
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     @endforeach
                 @else
@@ -260,36 +277,36 @@
 
                 <div class="text-center">
                     <h2 class="fw-bolder">{{ __('homepage.Gallery') }}</h2>
+                    <a style="text-decoration: none" href="{{ route('photos.index') }}">{{ __('homepage.View All') }}
+                        <i class="bi bi-arrow-right">
+                        </i></a>
                     <div class="row">
                         <div class="col-12 m-auto">
                             <div class="owl-carousel owl-theme">
-                                @if ($videos)
-                                    @foreach ($videos as $video)
+                                
+                                @if($paginatedPhotos->isNotEmpty())
+                @foreach ($paginatedPhotos as $photo)
+                    @if($photo->image_path)
+                        @foreach ($photo->image_path as $image)
                                         <div class="item mb-4">
                                             <div class="item">
                                                 <div class="card border-0 shadow">
-                                                    {{-- <iframe class="youtube" src="{!! $video->url !!}"
-                                                        frameborder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                        allowfullscreen></iframe> --}}
-                                                    <x-embed url="{{ $video->url }}" aspect-ratio="4:3"></x-embed>
-                                                    {{-- {!! $video->url !!} --}}
+                                                  
+                                                    {{-- <x-embed url="{{ $video->url }}" aspect-ratio="4:3"></x-embed> --}}
+                                                    <a href="{{ asset('storage/' . $image) }}" data-lightbox="photos">
+                                                    <img src="{{ asset('storage/' . $image) }}" alt="" class="card-img-top">
 
+                                                    </a>
 
                                                 </div>
                                             </div>
 
                                         </div>
-
-                                        {{-- <div class="item">
-                                            <div class="card border-0 shadow">
-                                                <img src="7.jpg" alt="" class="card-img-top">
-
-                                            </div>
-                                        </div> --}}
+                                        @endforeach
+                                        @endif
                                     @endforeach
                                 @else
-                                    <h3 style="color:red; text-align:center">Sorry nothing found</h3>
+                                    <h1 style="color: red">Nothing to show</h1>
                                 @endif
                             </div>
                         </div>
@@ -315,7 +332,7 @@
                         @foreach ($bookclubs as $bookclub)
                             <div class="mb-4">
                                 <div class="small text-muted">{{ $bookclub->getFormattedDate() }}</div>
-                                <a class="link-dark" href="#!">
+                                <a class="link-dark" href="{{ route('bookclub.show',$bookclub->id) }}">
                                     <h3>{{ $bookclub->title }}</h3>
                                 </a>
                             </div>
@@ -323,12 +340,12 @@
                     @else
                         <h3 style="color:red; text-align:center">Sorry nothing found</h3>
                     @endif
-                    {{-- <div class="text-end mb-5 mb-xl-0">
-                        <a class="text-decoration-none" href="#!">
-                            More news
+                    <div class="text-end mb-5 mb-xl-0">
+                        <a class="text-decoration-none" href="{{ route('bookclub.index') }}">
+                            {{ __('homepage.View All') }}
                             <i class="bi bi-arrow-right"></i>
                         </a>
-                    </div> --}}
+                    </div>
                 </div>
 
                 <div class="col-xl-4">
@@ -344,7 +361,7 @@
                                     </p>
 
 
-                                    <a class="fs-5 px-2 " href="#!"><svg xmlns="http://www.w3.org/2000/svg"
+                                    <a class="fs-5 px-2 " href="{{ route('onlineRegister.create') }}"><svg xmlns="http://www.w3.org/2000/svg"
                                             width="50" height="50" fill="currentColor"
                                             class="bi bi-person-fill-check" viewBox="0 0 16 16">
                                             <path

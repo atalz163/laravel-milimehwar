@@ -13,6 +13,8 @@ return
         'Vision' => ' تګلاره ',
         'Documents' => 'اسناد',
         'Contact' => 'اړیکې',
+        'Feedbacks & Comments' => 'ستاسې نظریات او پیشنهادات',
+        'Online Registeration' => 'د غړیتوب فورمه',
         'Read More' => 'نور...',
         'View details' => 'نور...',
         'Our team' => 'د ملي محور مخکښان',
@@ -23,6 +25,8 @@ return
         'Want to join us?' => 'ایا غواړی زمونږ سره یو ځای شئ؟',
         'Online Form' => 'انلاین فارم',
         'Follow Us on our Social Media' => 'د ټولنیز رسنیو لړۍ',
-        'Quick Links' => 'چټک لینکونه'
+        'Quick Links' => 'چټک لینکونه',
+        'View All' => "نور دلته",
+        'Read More' => 'نور..'
 
     ];

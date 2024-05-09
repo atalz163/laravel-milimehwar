@@ -2,39 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announcement;
-use App\Models\Articles;
-use App\Models\BookClubs;
-use App\Models\Carousel;
+use Carbon\Carbon;
 use App\Models\Item;
+use App\Models\Video;
+use App\Models\WhyUs;
+use App\Models\Photos;
+use App\Models\Vision;
+use App\Models\Articles;
+use App\Models\Carousel;
 use App\Models\Language;
 use App\Models\OurStory;
+use App\Models\BookClubs;
 use App\Models\QuickLinks;
 use App\Models\TeamMembers;
-use App\Models\Video;
-use App\Models\Vision;
-use App\Models\WhyUs;
-use Carbon\Carbon;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+
+use Illuminate\Pagination\LengthAwarePaginator;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class HomeController extends Controller
 {
     public function openHomePage(Request $request)
     {
-        // $languageCode = $request->language ? $request->language : 'en';
-        // $language = Language::where('code', $languageCode)->first();
-        // $language = $language ? $language->id : null;
-
-        // Retrieve all items
-        //  $item = Item::all();
-
-        // $locale = app()->getLocale();
-
-        // $language = Language::where('code', $locale)->first();
-        // $language = $language ? $language->id : null;
-
+   
+    
         $currentLocale = App::getLocale();
         $language = Language::where('code', $currentLocale)->first();
 
@@ -75,7 +68,26 @@ class HomeController extends Controller
         }
 
         $videos = Video::orderBy('created_at', 'desc')->take(3)->get();
+        
 
+        $perPage = 3; // Number of items per page
+        $page = request()->get('page', 1); // Get the current page from the request query parameter or default to 1
+    
+        $photos = Photos::orderBy('created_at', 'desc')->get(); // Retrieve all photos
+        $total = $photos->count(); // Total number of photos
+    
+        // Paginate the photos
+        $paginatedPhotos = new LengthAwarePaginator(
+            $photos->forPage($page, $perPage),
+            $total,
+            $perPage,
+            $page,
+            ['path' => request()->url(), 'query' => request()->query()]
+        );
+
+
+
+        //dd($videos);
         if ($language) {
             $bookclubs = BookClubs::where('language_id', $language->id)
                 ->where('active', true)
@@ -128,19 +140,10 @@ class HomeController extends Controller
         }
 
 
-
-
-        // $languages = Language::all();
-        // if (!$item) {
-        //     abort(404);
-        // }
-
-
-
         return view('home', compact([
             'announcements', 'articles',
             'teamMembers', 'videos', 'bookclubs', 'whyUs',
-            'ourStory', 'vision', 'quickLinks'
+            'ourStory', 'vision', 'quickLinks','paginatedPhotos'
         ]));
     }
 
@@ -162,9 +165,7 @@ class HomeController extends Controller
 
     public function annoucementsAll(Request $request)
     {
-        // $languageCode = $request->language ? $request->language : 'en';
-        // $language = Language::where('code', $languageCode)->first();
-        // $language = $language ? $language->id : null;
+ 
         $currentLocale = App::getLocale();
         $language = Language::where('code', $currentLocale)->first();
 
@@ -199,4 +200,155 @@ class HomeController extends Controller
 
         return view('articles.index', compact('showAll'));
     }
+
+
+    public function allTeamMembers(Request $request)
+    {
+        $currentLocale = App::getLocale();
+        $language = Language::where('code', $currentLocale)->first();
+
+
+        if ($language) {
+            $showAll = TeamMembers::where('language_id', $language->id)
+                ->where('active', true)
+                ->orderBy('created_at', 'desc')
+                ->paginate(9);
+        } else {
+
+            $showAll = null;
+        }
+
+        return view('teammembers.index', compact('showAll'));
+    }
+
+    public function showTeamMember($id){
+
+        $teamMember = TeamMembers::findOrFail($id);
+        return view('teammembers.view',compact('teamMember'));
+
+    }
+
+    public function bookclubs(Request $request)
+    {
+        $currentLocale = App::getLocale();
+        $language = Language::where('code', $currentLocale)->first();
+
+
+        if ($language) {
+            $showAll = BookClubs::where('language_id', $language->id)
+                ->where('active', true)
+                ->orderBy('created_at', 'desc')
+                ->paginate(9);
+        } else {
+
+            $showAll = null;
+        }
+
+        return view('bookclubs.index', compact('showAll'));
+    }
+
+    public function showBookclub(BookClubs $bookclub){
+       // dd($bookclub);
+        return view('bookclubs.view',compact('bookclub'));
+    }
+
+    public function whyus(Request $request){
+       
+        $currentLocale = App::getLocale();
+        $language = Language::where('code', $currentLocale)->first();
+
+
+        if ($language) {
+            $showAll = WhyUs::where('language_id', $language->id)
+                
+                ->orderBy('created_at', 'desc')
+                ->paginate(9);
+        } else {
+
+            $showAll = null;
+        }
+        return view('whyus.index', compact('showAll'));
+    }
+
+    public function whyusdetails(WhyUs $whyus){
+
+        return view('whyus.view',compact('whyus'));
+    }
+
+
+    public function ourstory(Request $request){
+       
+        $currentLocale = App::getLocale();
+        $language = Language::where('code', $currentLocale)->first();
+
+
+        if ($language) {
+            $showAll = OurStory::where('language_id', $language->id)
+                
+                ->orderBy('created_at', 'desc')
+                ->paginate(9);
+        } else {
+
+            $showAll = null;
+        }
+        return view('ourstory.index', compact('showAll'));
+    }
+
+    public function ourstorydetails(OurStory $ourstory){
+
+        return view('ourstory.view',compact('ourstory'));
+    }
+
+    public function ourvision(Request $request){
+       
+        $currentLocale = App::getLocale();
+        $language = Language::where('code', $currentLocale)->first();
+
+
+        if ($language) {
+            $showAll = Vision::where('language_id', $language->id)
+                ->orderBy('created_at', 'desc')
+                ->paginate(9);
+        } else {
+
+            $showAll = null;
+        }
+        return view('ourvision.index', compact('showAll'));
+    }
+
+    public function ourvisiondetails(Vision $ourvision){
+        
+        return view('ourvision.view',compact('ourvision'));
+    }
+
+    public function allvideos(Video $videos){
+        $videos = Video::orderBy('created_at','desc')
+        ->paginate(3);
+      //  dd($video);
+        return view('videos.index',compact('videos'));
+    }
+
+    public function allphotos()
+    {
+        // $photos = Photos::orderBy('created_at', 'desc')->paginate(3);
+        $perPage = 3; // Number of items per page
+        $page = request()->get('page', 1); // Get the current page from the request query parameter or default to 1
+    
+        $photos = Photos::orderBy('created_at', 'desc')->get(); // Retrieve all photos
+        $total = $photos->count(); // Total number of photos
+    
+        // Paginate the photos
+        $paginatedPhotos = new LengthAwarePaginator(
+            $photos->forPage($page, $perPage),
+            $total,
+            $perPage,
+            $page,
+            ['path' => request()->url(), 'query' => request()->query()]
+        );
+    
+
+        return view('photos.index', compact('paginatedPhotos'));
+    }
+
+
 }

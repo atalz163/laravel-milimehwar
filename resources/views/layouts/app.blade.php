@@ -24,6 +24,8 @@
         crossorigin="anonymous" />
 
     <x-embed-styles />
+    <!-- Stylesheet for Gallery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 
 </head>
 
@@ -85,7 +87,7 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-info">
 
         <div class="container px-5">
-            <a class="navbar-brand d-flex align-items-end" href="index.html"><img
+            <a class="navbar-brand d-flex align-items-end" href="{{ route('site.home') }}"><img
                     src="{{ asset('images/milimehwar.png') }}" class="d-inline-block align-text-top logo" />
                 <span class="ms-2">{{ __('homepage.MilliMehwar') }}</span>
             </a>
@@ -94,15 +96,15 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">{{ __('homepage.Annoucements') }}</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('annoucements.index') }}">{{ __('homepage.Annoucements') }}</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">{{ __('homepage.Articles') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('articles.index') }}">{{ __('homepage.Articles') }}</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">{{ __('homepage.Gallery') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                            <li><a class="dropdown-item" href="blog-home.html">{{ __('homepage.Photos') }}</a></li>
-                            <li><a class="dropdown-item" href="blog-post.html">{{ __('homepage.Videos') }}</a></li>
+                            <li><a class="dropdown-item" href="{{ route('photos.index') }}">{{ __('homepage.Photos') }}</a></li>
+                            <li><a class="dropdown-item" href="{{ route('videos.index') }}">{{ __('homepage.Videos') }}</a></li>
                         </ul>
                     </li>
 
@@ -111,19 +113,29 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">{{ __('homepage.About Us') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                            <li><a class="dropdown-item" href="blog-home.html">{{ __('homepage.Our Bio') }}</a></li>
-                            <li><a class="dropdown-item" href="blog-post.html">{{ __('homepage.Our Mission') }}</a>
+                            <li><a class="dropdown-item" href="{{ route('ourstory.index') }}">{{ __('homepage.Our Bio') }}</a></li>
+                            <li><a class="dropdown-item" href="{{ route('ourvision.index') }}">{{ __('homepage.Our Mission') }}</a>
+                                <li><a class="dropdown-item" href="{{ route('whyus.index') }}">{{ __('homepage.Why Us') }}</a>
                             </li>
-                            <li><a class="dropdown-item" href="blog-post.html">{{ __('homepage.Our Story') }}</a>
+                            {{-- <li><a class="dropdown-item" href="{{ route('ourstory.index') }}">{{ __('homepage.Our Story') }}</a> --}}
                             </li>
-                            <li><a class="dropdown-item" href="blog-post.html">{{ __('homepage.Documents') }}</a>
+                           
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">{{ __('homepage.Contact') }}</a>
-                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">{{ __('homepage.Contact') }}</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                            
+                            <li><a class="dropdown-item" href="{{ route('contact.create') }}">{{ __('homepage.Contact') }}</a>
+                            <li><a class="dropdown-item" href="{{ route('contact.index') }}">{{ __('homepage.Feedbacks & Comments') }}</a>
+                            <li><a class="dropdown-item" href="{{ route('onlineRegister.create') }}">{{ __('homepage.Online Registeration') }}</a>
 
-                </ul>
+
+                    </li>
+                   
+               
             </div>
         </div>
 
@@ -173,6 +185,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
     crossorigin="anonymous"></script>
+<!-- Script for Gallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 
 <script>
     $('.owl-carousel').owlCarousel({
@@ -220,6 +234,9 @@
 </script>
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 <!-- AddToAny END -->
+
+
+
 </body>
 
 </html>

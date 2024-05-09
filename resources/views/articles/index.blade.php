@@ -42,7 +42,7 @@
                     @endforeach
             </div>
 
-            {{ $articlesks() }}
+            {{ $articles->links() }}
 
 
             <!-- Pagination -->

@@ -21,7 +21,8 @@ class NewsTranslationResource extends Resource
     protected static ?string $model = NewsTranslation::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
-    protected static ?string $navigationGroup = "Website Extra";
+    protected static bool $shouldRegisterNavigation = false;
+
 
     public static function form(Form $form): Form
     {

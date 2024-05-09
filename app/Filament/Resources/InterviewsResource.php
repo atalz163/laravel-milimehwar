@@ -14,11 +14,15 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+
+
 class InterviewsResource extends Resource
 {
+
     protected static ?string $model = Interviews::class;
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $navigationIcon = 'heroicon-o-microphone';
-    protected static ?string $navigationGroup = "Website Content";
+   
 
     public static function form(Form $form): Form
     {

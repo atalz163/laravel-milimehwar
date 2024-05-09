@@ -19,6 +19,6 @@ class LocalizationController extends Controller
         }
 
         session(['localization' => $locale]);
-        return redirect()->back();
+        return redirect()->route('site.home');
     }
 }

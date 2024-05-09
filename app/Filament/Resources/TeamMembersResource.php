@@ -32,7 +32,7 @@ class TeamMembersResource extends Resource
                         Forms\Components\TextInput::make('name')
                             ->required()
                             ->maxLength(2048),
-                        Forms\Components\RichEditor::make('body')
+                        Forms\Components\RichEditor::make('biography')
                             ->label('Biography')
                             ->columnSpanFull(),
                         Forms\Components\Toggle::make('active')

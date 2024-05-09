@@ -19,7 +19,8 @@ class ReportsResource extends Resource
     protected static ?string $model = Reports::class;
 
     protected static ?string $navigationIcon = 'heroicon-s-document-duplicate';
-    protected static ?string $navigationGroup = "Website Extra";
+    protected static bool $shouldRegisterNavigation = false;
+
 
     public static function form(Form $form): Form
     {

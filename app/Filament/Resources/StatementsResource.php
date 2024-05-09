@@ -20,7 +20,8 @@ class StatementsResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-pencil';
 
-    protected static ?string $navigationGroup = "Website Extra";
+    protected static bool $shouldRegisterNavigation = false;
+
 
     public static function form(Form $form): Form
     {

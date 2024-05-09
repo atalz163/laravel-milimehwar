@@ -19,7 +19,7 @@ class ServicesResource extends Resource
     protected static ?string $model = Services::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-wrench';
-    protected static ?string $navigationGroup = "Website Extra";
+    protected static bool $shouldRegisterNavigation = false;
 
 
     public static function form(Form $form): Form
