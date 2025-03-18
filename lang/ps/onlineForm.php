@@ -6,6 +6,7 @@ return [
     'Full Name' => 'مکمل نوم',
     'Father\'s Name' => 'پلار نوم',
     'Grandfather\'s Name' => 'نیکه نوم',
+    'Blood Group'=> 'د وينې ګروپ',
     'Gender' => 'جنس',
     'Male' => 'نارینه',
     'Female' => 'ښځینه',

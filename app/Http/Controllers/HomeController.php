@@ -250,8 +250,8 @@ class HomeController extends Controller
         return view('bookclubs.index', compact('showAll'));
     }
 
-    public function showBookclub(BookClubs $bookclub){
-       // dd($bookclub);
+    public function showBookclub($id){
+       $bookclub = BookClubs::findOrFail($id);
         return view('bookclubs.view',compact('bookclub'));
     }
 

@@ -16,20 +16,12 @@
                     @foreach ($showAll as $all)
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
-<<<<<<< HEAD
                                 <img class="card-img-top" src="{{ asset('storage/' . $all->photo) }}"
                                     alt="..." />
                                 <div class="card-body p-4">
 
                                     <a class="text-decoration-none link-dark stretched-link"
-                                        href="{{ route('bookclub.index', $all) }}">
-=======
-                                
-                                <div class="card-body p-4">
-
-                                    <a class="text-decoration-none link-dark stretched-link"
                                         href="{{ route('bookclub.show', $all) }}">
->>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                                         <h5 class="card-title
                                         mb-3">
                                             {{ $all->title }}</h5>
@@ -40,11 +32,7 @@
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
-<<<<<<< HEAD
                                             <button class="btn btn-primary ">{{ __('homepage.Read More') }}</button>
-=======
-                                            <button class="btn btn-primary ">Read More</button>
->>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
 
                                         </div>
                                     </div>

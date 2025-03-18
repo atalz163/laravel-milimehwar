@@ -2,7 +2,7 @@
 // File: resources/lang/ps/dari.php
 
 return [
-    'Submit your Registeration Form' => 'فارم آنلاین برای ع',
+    'Submit your Registeration Form' => 'فارم آنلاین برای عضویت',
     'We would love to have you!' =>'شما میتوانید با فارم آنلاین با ما بيیوندید',
     'Full Name' => 'اسم مکمل',
     'Father\'s Name' => 'اسم پدر',

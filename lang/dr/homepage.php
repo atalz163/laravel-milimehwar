@@ -26,10 +26,6 @@ return
         'Online Form' => 'آنلاین فارم',
         'Follow Us on our Social Media' => 'ارتباطات اجتماعی',
         'Quick Links' => 'سایت های مرتبط',
-<<<<<<< HEAD
+        'Please click and submit the online form' => 'لطفاً فرم آنلاین را کلیک کرده و ارسال کنید',
         'View All' => 'مشاهده همه',
-        'Read More' => 'مشاهده..'
-=======
-        'View All ' => 'مشاهده همه'
->>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
     ];

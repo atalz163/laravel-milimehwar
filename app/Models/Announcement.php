@@ -47,4 +47,5 @@ class Announcement extends Model
     {
         return $this->published_at->format('F jS Y');
     }
+    
 }

@@ -28,6 +28,8 @@ return
         'Quick Links' => 'Quick Links',
         'View All' => 'View All',
         'Read More' => 'Read More',
-        'View All ' => 'View All',
+       'Please click and submit the online form' => 'Please click and submit the online form'
+
+
 
     ];

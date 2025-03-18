@@ -5,15 +5,15 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
                     <div class="text-center">
-                        <h2 class="fw-bolder">{{ __('homepage.Annoucements') }}</h2>
+                        <h2 class="fw-bolder">{{ __('homepage.Articles') }}</h2>
 
                         </a>
                     </div>
                 </div>
             </div>
             <div class="row gx-5">
-                @if ($showAll)
-                    @foreach ($showAll as $all)
+                @if ($articles)
+                    @foreach ($articles as $all)
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="{{ asset('storage/' . $all->thumbnail) }}"
@@ -32,7 +32,7 @@
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
-                                            <button class="btn btn-primary ">Read More</button>
+                                            <button class="btn btn-primary ">{{ __('homepage.Read More') }}</button>
 
                                         </div>
                                     </div>
@@ -42,11 +42,7 @@
                     @endforeach
             </div>
 
-<<<<<<< HEAD
             {{ $articles->links() }}
-=======
-            {{ $showAll->links() }}
->>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
 
 
             <!-- Pagination -->
