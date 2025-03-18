@@ -20,7 +20,7 @@
 
                             <!-- Post meta content-->
                             <div class="text-muted fst-italic mb-2">
-                                {{ $article->published_at }}
+                                {{ $article->getFormattedDate() }}
                             </div>
 
                             <!-- AddToAny BEGIN -->
@@ -38,8 +38,12 @@
 
                         </header>
                         <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded"
-                                src="{{ asset('storage/' . $article->thumbnail) }}" alt="..." /></figure>
+                        <figure class="mb-4">
+                            @if(!empty($article->thumbnail))
+                            <img class="img-fluid rounded"
+                                src="{{ asset('storage/' . $article->thumbnail) }}" alt="..." />
+                            @endif
+                            </figure>
                         <!-- Post content-->
                         <section class="mb-5">
                             <p class="fs-5 mb-4">{!! $article->body !!}</p>

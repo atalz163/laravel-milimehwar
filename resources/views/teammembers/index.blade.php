@@ -27,16 +27,12 @@
                                             {{ $all->name }}</h5>
                                     </a>
                                     {{-- <p class="card-text mb-0">{!! $translation->body !!} </p> --}}
-<<<<<<< HEAD
                                     <p class="card-text mb-0">{{ $all->shortBody() }} </p>
-=======
-                                    <p class="card-text mb-0">{!! $all->shortBody() !!} </p>
->>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
-                                            <button class="btn btn-primary ">Read More</button>
+                                            <button class="btn btn-primary ">{{ __('homepage.Read More') }}</button>
 
                                         </div>
                                     </div>

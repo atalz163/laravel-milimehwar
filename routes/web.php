@@ -35,7 +35,7 @@ Route::middleware(Localization::class)
         Route::get('/teammembers', [HomeController::class, 'allTeamMembers'])->name('teamMembers.index');
         Route::get('/teammembers/{teammember}', [HomeController::class, 'showTeamMember'])->name('teammember.show');
 
-        Route::get('/bookclubs', [HomeController::class, 'bookclubs'])->name('bookclub.index');
+        Route::get('/bookclubs', [HomeController::class, 'allbookclubs'])->name('bookclub.index');
         Route::get('/bookclubs/{bookclub}', [HomeController::class, 'showBookclub'])->name('bookclub.show');
 
         Route::get('/whyus', [HomeController::class, 'whyus'])->name('whyus.index');

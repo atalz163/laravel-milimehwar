@@ -15,8 +15,8 @@ return
         'Contact' => 'اړیکې',
         'Feedbacks & Comments' => 'ستاسې نظریات او پیشنهادات',
         'Online Registeration' => 'د غړیتوب فورمه',
-        'Read More' => 'نور...',
-        'View details' => 'نور...',
+        'Read More' => '...نور',
+        'View details' => '...نور',
         'Our team' => 'د ملي محور مخکښان',
         'Why Us?' => 'ولې ملي محور؟',
         'Our Story' => 'د ملي محور لنډه پېژندنه',
@@ -26,11 +26,8 @@ return
         'Online Form' => 'انلاین فارم',
         'Follow Us on our Social Media' => 'د ټولنیز رسنیو لړۍ',
         'Quick Links' => 'چټک لینکونه',
-<<<<<<< HEAD
-        'View All' => "نور دلته",
-        'Read More' => 'نور..'
+        'View All' => 'ټول وګوری',
+        'Please click and submit the online form' => 'مهرباني وکړئ آنلاین فورمه کلیک او ولیږی'
 
-=======
-        'View All ' => 'ټول وګوری'
->>>>>>> 95e07e254b31dfab86d2972893ed7f40597b2c18
+
     ];

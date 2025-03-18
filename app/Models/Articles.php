@@ -22,6 +22,10 @@ class Articles extends Model
         'item_id'
     ];
 
+    protected $casts = [
+        'published_at' => 'datetime'
+    ];
+    
     public function language()
     {
         return $this->belongsTo(Language::class);
@@ -41,4 +45,13 @@ class Articles extends Model
     {
         return Str::words(strip_tags($this->body), 50);
     }
+
+    public function getFormattedDate()
+    {
+        return $this->published_at->format('F jS Y');
+    }
+
 }
+
+
+

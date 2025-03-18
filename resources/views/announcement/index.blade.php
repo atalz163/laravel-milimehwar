@@ -32,7 +32,7 @@
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
-                                            <button class="btn btn-primary ">Read More</button>
+                                            <button class="btn btn-primary ">{{ __('homepage.Read More') }}</button>
 
                                         </div>
                                     </div>

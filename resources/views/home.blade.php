@@ -88,8 +88,8 @@
                 <div class="col-lg-8 col-xl-6">
                     <div class="text-center">
                         <h2 class="fw-bolder">{{ __('homepage.Annoucements') }}</h2>
-                        <a style="text-decoration: none"  href="{{ route('annoucements.index') }}">View
-                            All 
+                        <a style="text-decoration: none"  href="{{ route('annoucements.index') }}">
+                            {{ __('homepage.View All') }}
                             <i class="bi bi-arrow-right"></i>
                         </a>
                         {{-- <p >{{ __('homepage.More') }}</p> --}}
@@ -253,7 +253,7 @@
                                 src="{{ asset('storage/' . $v->thumbnail) }}" alt="..." />
                         </div>
                         <div class="col-lg-6">
-                            <h2 class="fw-bolder">Our Mission</h2>
+                            <h2 class="fw-bolder">{{ __('homepage.Our Mission') }}</h2>
                             <p class="lead fw-normal text-muted mb-0">{!! $v->shortbody() !!}</p>
                             <a style="text-decoration:none" href="{{ route('ourvision.index') }}">{{ __('homepage.Read More') }}
                                 <i class="bi bi-arrow-right"></i>
@@ -355,7 +355,7 @@
                                 <div class="text-center">
                                     <div class="h6 fw-bolder">{{ __('homepage.Want to join us?') }}</div>
                                     <p class="text-muted mb-4">
-                                        Please click and submit the online form
+                                       {{__('homepage.Please click and submit the online form')}}
                                         <br />
 
                                     </p>
